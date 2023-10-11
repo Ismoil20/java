@@ -35,7 +35,7 @@ const labelDate = document.querySelector('.date');
 const labelBalance = document.querySelector('.balance__value');
 const labelSumIn = document.querySelector('.summary__value--in');
 const labelSumOut = document.querySelector('.summary__value--out');
-const labelSumInterest = document.querySelector('.summary__value--interest');
+const labelSumCashBack = document.querySelector('.summary__value--interest');
 const labelTimer = document.querySelector('.timer');
 const containerApp = document.querySelector('.app');
 const containerMovements = document.querySelector('.movements');
@@ -88,9 +88,9 @@ function displaySummary(account) {
 
   const cashback = account.movements
     .filter(move => move > 0)
-    .map(move => move * (account.cashBackRate / 100))
+    .map(move => move * (account.interestRate / 100))
     .filter(cash => cash > 1)
-    .reduce((acc, val) => acc + val);
+    .reduce((acc, val) => acc + val)
 
   labelSumCashBack.textContent = `${cashback}$`;
 }
