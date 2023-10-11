@@ -17,22 +17,28 @@
   <body>
     <!-- TOP NAVIGATION -->
     <nav>
-      <p class="welcome">Log in to get started</p>
+      <button id="welcome" class="welcome">Log in to get started</button>
       <img src="logo.png" alt="Logo" class="logo" />
-      <form class="login">
-        <input
-          type="text"
-          placeholder="user"
-          class="login__input login__input--user"
-        />
-        <input
-          type="text"
-          placeholder="PIN"
-          maxlength="4"
-          class="login__input login__input--pin"
-        />
-        <button class="login__btn">&rarr;</button>
-      </form>
+      <div id="modal" class="none">
+        <div class="modal-box">
+          <button id="Close-btn">❌</button>
+
+          <form class="login">
+            <input
+              type="text"
+              placeholder="user"
+              class="login__input login__input--user"
+            />
+            <input
+              type="text"
+              placeholder="PIN"
+              maxlength="4"
+              class="login__input login__input--pin"
+            />
+            <button class="login__btn">&rarr;</button>
+          </form>
+        </div>
+      </div>
     </nav>
 
     <!-- In practice, use type="password" -->
@@ -66,12 +72,18 @@
       </div>
       <!-- SUMMARY -->
       <div class="summary">
-        <p class="summary__label">In</p>
-        <p class="summary__value summary__value--in">0000€</p>
-        <p class="summary__label">Out</p>
-        <p class="summary__value summary__value--out">0000€</p>
-        <p class="summary__label">CashBack</p>
-        <p class="summary__value summary__value--interest">0000€</p>
+        <div>
+          <p class="summary__label">In</p>
+          <p class="summary__value summary__value--in">0000€</p>
+        </div>
+        <div>
+          <p class="summary__label">Out</p>
+          <p class="summary__value summary__value--out">0000€</p>
+        </div>
+        <div>
+          <p class="summary__label">CashBack</p>
+          <p class="summary__value summary__value--interest">0000€</p>
+        </div>
         <button class="btn--sort">&downarrow;SORT</button>
       </div>
       <!-- OPERATION: TRANSFERS -->

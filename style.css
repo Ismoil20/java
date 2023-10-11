@@ -25,6 +25,8 @@ nav {
 .welcome {
   font-size: 1.9rem;
   font-weight: 500;
+  border: none;
+  background-color: transparent;
 }
 .logo {
   height: 5.25rem;
@@ -146,6 +148,11 @@ nav {
   padding: 0 0.3rem;
   margin-top: 1rem;
 }
+.summary > div{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .summary__label {
   font-size: 1.2rem;
   font-weight: 500;
@@ -251,4 +258,56 @@ h2 {
 }
 .timer {
   font-weight: 600;
+}
+#Close-btn {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+@media (max-width: 650px) {
+  .none{
+    display: none !important;
+  }
+  #modal {
+    top: 0;
+    left: 0;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: #00000083;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-box {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+  }
+  #Close-btn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    padding: 3px;
+    border: 1px solid red;
+    background-color: transparent;
+  }
+  .summary{
+    flex-wrap: wrap;
+  }
+  .summary > div{
+    flex-direction: column;
+  }
+  .balance__value{
+    font-size: 3rem;
+  }
 }
