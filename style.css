@@ -318,4 +318,7 @@ h2 {
   span {
     display: none;
   }
+  .logout-timer {
+    text-align: center;
+  }
 }
