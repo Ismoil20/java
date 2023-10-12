@@ -148,7 +148,7 @@ nav {
   padding: 0 0.3rem;
   margin-top: 1rem;
 }
-.summary > div{
+.summary > div {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -270,10 +270,8 @@ h2 {
   }
 }
 
-
-
 @media (max-width: 650px) {
-  .none{
+  .none {
     display: none !important;
   }
   #modal {
@@ -301,13 +299,23 @@ h2 {
     border: 1px solid red;
     background-color: transparent;
   }
-  .summary{
+  .summary {
     flex-wrap: wrap;
   }
-  .summary > div{
+  .summary > div {
     flex-direction: column;
   }
-  .balance__value{
+  .balance__value {
     font-size: 3rem;
+  }
+  .welcome {
+    border: 1px solid #39b385;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #39b385;
+  }
+  span {
+    display: none;
   }
 }
