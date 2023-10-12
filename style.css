@@ -315,7 +315,7 @@ h2 {
     color: #fff;
     background-color: #39b385;
   }
-  span {
+  .to-get {
     display: none;
   }
   .logout-timer {
