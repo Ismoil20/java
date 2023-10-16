@@ -202,7 +202,7 @@ function addZeroBegin(num) {
 }
 
 ok.addEventListener('click', function () {
-  modal.style.opacity = 0;
+  modal.classList.toggle('hidden')
   inputLoginUsername.value = inputLoginPin.value = '';
 });
 
@@ -217,7 +217,7 @@ btnLogin.addEventListener('click', function (e) {
   let user = accaunts.find(acc => inputLoginUsername.value == acc.userName);
 
   if (!user || inputLoginPin.value != user.pin) {
-    modal.style.opacity = 1;
+    modal.classList.toggle('hidden')
     return;
   }
 
@@ -227,6 +227,8 @@ btnLogin.addEventListener('click', function (e) {
 
   labelWelcome.textContent = `Hello, ${currentUser.owner.split(' ')[0]}!`;
   labelDate.textContent = displayTime(new Date());
+
+  modal.classList.add('hidden');
 
   updateUI(currentUser);
   userLogOut();

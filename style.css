@@ -298,7 +298,7 @@ h2 {
 }
 
 .hidden {
-  opacity: 0;
+  display: none;
 }
 
 h4 {
