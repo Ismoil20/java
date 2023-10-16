@@ -202,7 +202,7 @@ function addZeroBegin(num) {
 }
 
 ok.addEventListener('click', function () {
-  modal.classList.toggle('hidden')
+  modal.classList.toggle('hidden');
   inputLoginUsername.value = inputLoginPin.value = '';
 });
 
@@ -217,7 +217,7 @@ btnLogin.addEventListener('click', function (e) {
   let user = accaunts.find(acc => inputLoginUsername.value == acc.userName);
 
   if (!user || inputLoginPin.value != user.pin) {
-    modal.classList.toggle('hidden')
+    modal.classList.toggle('hidden');
     return;
   }
 
@@ -294,5 +294,5 @@ let sort = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
   sort = !sort;
-  displayMovements(currentUser.movements, sort);
+  displayMovements(currentUser, sort);
 });
