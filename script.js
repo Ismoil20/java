@@ -9,7 +9,7 @@ const accaunt1 = {
     '2023-10-11T09:50:00',
     '2023-10-09T07:15:00',
     '2023-10-04T15:10:00',
-    '2023-09-28T1218:25:00',
+    '2023-09-28T18:25:00',
     '2023-09-23T20:20:00',
     '2023-08-15T08:59:00',
     '2023-08-01T11:14:00',
@@ -183,7 +183,7 @@ function userLogOut() {
   let time = 300;
   let min = Math.trunc(time / 60);
   let sec = time % 60;
-  let timer = setInterval(() => {
+  timer = setInterval(() => {
     labelTimer.textContent = `${addZeroBegin(min)}:${addZeroBegin(sec)}`;
 
     if (sec == 0 && min != 0) {
@@ -206,15 +206,16 @@ ok.addEventListener('click', function () {
   inputLoginUsername.value = inputLoginPin.value = '';
 });
 
-let currentUser;
-
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter') btnLogin();
 });
+let currentUser, timer;
 
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
-  let user = accaunts.find(acc => inputLoginUsername.value == acc.userName);
+  let user = accaunts.find(
+    acc => inputLoginUsername.value.toLowerCase() == acc.userName
+  );
 
   if (!user || inputLoginPin.value != user.pin) {
     modal.classList.toggle('hidden');
@@ -229,6 +230,7 @@ btnLogin.addEventListener('click', function (e) {
   labelDate.textContent = displayTime(new Date());
 
   modal.classList.add('hidden');
+  clearInterval(timer);
 
   updateUI(currentUser);
   userLogOut();
